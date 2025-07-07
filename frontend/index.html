@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Merhaba Kubernetes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kubernetes Demo Uygulaması</h1>
+        <p>Backend'den gelen mesaj:</p>
+        <div id="message" class="message-box">Yükleniyor...</div>
+    </div>
+
+    <script>
+        // Backend servisine istek atıyoruz.
+        // Kubernetes içinde servis adı 'backend-service' olacak.
+        // Yerelde test ederken http://localhost:5000/api olarak değiştirebilirsiniz.
+        fetch('http://localhost:30001/api') // K8s service NodePort'u üzerinden erişim
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('message').innerText = `"${data.message}" (v${data.version})`;
+            })
+            .catch(error => {
+                document.getElementById('message').innerText = 'Backend servisine ulaşılamadı!';
+                console.error('Hata:', error);
+            });
+    </script>
+</body>
+</html>
