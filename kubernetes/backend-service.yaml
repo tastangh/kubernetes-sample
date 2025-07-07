@@ -5,7 +5,9 @@ metadata:
 spec:
   selector:
     app: backend
+  type: NodePort  # Change this from ClusterIP
   ports:
     - protocol: TCP
       port: 5000
       targetPort: 5000
+      nodePort: 30002 # Assign a new port for the backend
