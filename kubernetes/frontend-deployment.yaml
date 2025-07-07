@@ -14,8 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        # DEĞİŞİKLİK BURADA: İmaj adını güncelledik
-        image: kubernetes-sample-frontend:1.0
+-        image: kubernetes-sample-frontend:1.0
         imagePullPolicy: Never
         ports:
         - containerPort: 80
