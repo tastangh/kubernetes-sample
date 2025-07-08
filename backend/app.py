@@ -8,7 +8,7 @@ CORS(app)
 
 @app.route('/api')
 def get_message():
-    return jsonify(message="Merhaba Kubernetes! Sample Projem nasıl", version="1.3")
+    return jsonify(message="Merhaba Kubernetes! Sample Projem nasıl", version="1.5")
 
 if __name__ == '__main__':
     # Konteyner içinde 0.0.0.0 üzerinden erişilebilir olmalı
