@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: kubernetes-sample-backend:1.5
+        image: kubernetes-sample-backend:1.0
         imagePullPolicy: Never
         ports:
         - containerPort: 5000
